@@ -1,0 +1,215 @@
+{
+    "electricMeters": [
+      {
+        "id": 1,
+        "ownerName": "Juan Pérez",
+        "meterNumber": "123456",
+        "electricConsumption": {
+          "April": 320,
+          "May": 340,
+          "June": 310,
+          "July": 330,
+          "August": 315,
+          "September": 300
+        },
+        "bills": {
+          "April": 64.00,
+          "May": 68.00,
+          "June": 62.00,
+          "July": 66.00,
+          "August": 63.00,
+          "September": 60.00
+        }
+      },
+      {
+        "id": 2,
+        "ownerName": "María López",
+        "meterNumber": "654321",
+        "electricConsumption": {
+          "April": 200,
+          "May": 210,
+          "June": 205,
+          "July": 215,
+          "August": 220,
+          "September": 195
+        },
+        "bills": {
+          "April": 40.00,
+          "May": 42.00,
+          "June": 41.00,
+          "July": 43.00,
+          "August": 44.00,
+          "September": 39.00
+        }
+      },
+      {
+        "id": 3,
+        "ownerName": "Carlos Gómez",
+        "meterNumber": "789012",
+        "electricConsumption": {
+          "April": 150,
+          "May": 160,
+          "June": 155,
+          "July": 165,
+          "August": 170,
+          "September": 145
+        },
+        "bills": {
+          "April": 30.00,
+          "May": 32.00,
+          "June": 31.00,
+          "July": 33.00,
+          "August": 34.00,
+          "September": 29.00
+        }
+      },
+      {
+        "id": 4,
+        "ownerName": "Ana Torres",
+        "meterNumber": "345678",
+        "electricConsumption": {
+          "April": 400,
+          "May": 420,
+          "June": 410,
+          "July": 430,
+          "August": 415,
+          "September": 390
+        },
+        "bills": {
+          "April": 80.00,
+          "May": 84.00,
+          "June": 82.00,
+          "July": 86.00,
+          "August": 83.00,
+          "September": 78.00
+        }
+      },
+      {
+        "id": 5,
+        "ownerName": "Luis Martínez",
+        "meterNumber": "567890",
+        "electricConsumption": {
+          "April": 250,
+          "May": 260,
+          "June": 255,
+          "July": 270,
+          "August": 265,
+          "September": 240
+        },
+        "bills": {
+          "April": 50.00,
+          "May": 52.00,
+          "June": 51.00,
+          "July": 54.00,
+          "August": 53.00,
+          "September": 48.00
+        }
+      },
+      {
+        "id": 6,
+        "ownerName": "Laura Ruiz",
+        "meterNumber": "987654",
+        "electricConsumption": {
+          "April": 180,
+          "May": 190,
+          "June": 185,
+          "July": 200,
+          "August": 195,
+          "September": 170
+        },
+        "bills": {
+          "April": 36.00,
+          "May": 38.00,
+          "June": 37.00,
+          "July": 40.00,
+          "August": 39.00,
+          "September": 34.00
+        }
+      },
+      {
+        "id": 7,
+        "ownerName": "Pedro Fernández",
+        "meterNumber": "192837",
+        "electricConsumption": {
+          "April": 310,
+          "May": 320,
+          "June": 300,
+          "July": 325,
+          "August": 330,
+          "September": 305
+        },
+        "bills": {
+          "April": 62.00,
+          "May": 64.00,
+          "June": 60.00,
+          "July": 65.00,
+          "August": 66.00,
+          "September": 61.00
+        }
+      },
+      {
+        "id": 8,
+        "ownerName": "Gloria Ramírez",
+        "meterNumber": "564738",
+        "electricConsumption": {
+          "April": 220,
+          "May": 230,
+          "June": 225,
+          "July": 240,
+          "August": 235,
+          "September": 210
+        },
+        "bills": {
+          "April": 44.00,
+          "May": 46.00,
+          "June": 45.00,
+          "July": 48.00,
+          "August": 47.00,
+          "September": 42.00
+        }
+      },
+      {
+        "id": 9,
+        "ownerName": "José Navarro",
+        "meterNumber": "019283",
+        "electricConsumption": {
+          "April": 270,
+          "May": 280,
+          "June": 275,
+          "July": 290,
+          "August": 285,
+          "September": 260
+        },
+        "bills": {
+          "April": 54.00,
+          "May": 56.00,
+          "June": 55.00,
+          "July": 58.00,
+          "August": 57.00,
+          "September": 52.00
+        }
+      },
+      {
+        "id": 10,
+        "ownerName": "Teresa Mendoza",
+        "meterNumber": "475869",
+        "electricConsumption": {
+          "April": 130,
+          "May": 140,
+          "June": 135,
+          "July": 150,
+          "August": 145,
+          "September": 120
+        },
+        "bills": {
+          "April": 26.00,
+          "May": 28.00,
+          "June": 27.00,
+          "July": 30.00,
+          "August": 29.00,
+          "September": 24.00
+        }
+      }
+    ]
+  }
+  

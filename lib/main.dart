@@ -3,8 +3,11 @@ import 'dart:io';
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:get/get.dart';
 import 'package:google_mlkit_text_recognition/google_mlkit_text_recognition.dart';
 import 'package:image/image.dart' as img;
+import 'package:number_scanner/meter_details_page.dart';
+import 'package:number_scanner/providers/get_meter_by_number_provider.dart';
 import 'package:path_provider/path_provider.dart';
 
 void main() async {
@@ -22,7 +25,8 @@ class CameraTextScannerApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
+      debugShowCheckedModeBanner: false,
       theme: ThemeData.dark(),
       home: CameraScreen(camera: camera),
     );
@@ -157,7 +161,7 @@ class _CameraScreenState extends State<CameraScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Number Scanner'),
+        title: const Text('Escaner '),
         centerTitle: true,
       ),
       body: FutureBuilder<void>(
@@ -235,20 +239,40 @@ class _CameraScreenState extends State<CameraScreen> {
 
                         //
                         MaterialButton(
-                            color: Colors.deepPurpleAccent,
-                            height: 50,
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(4),
-                            ),
-                            onPressed: () {
-                              String text = _scannedTextController.text.trim();
-                              Clipboard.setData(ClipboardData(text: text))
-                                  .then((_) {
-                                ScaffoldMessenger.of(context).showSnackBar(
-                                    SnackBar(content: Text(text)));
-                              });
-                            },
-                            child: const Text('Copy')),
+                          color: Colors.deepPurpleAccent,
+                          height: 50,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(4),
+                          ),
+                          onPressed: () async {
+                            String text = _scannedTextController.text.trim();
+                            print("Texto escaneado: $text"); // Para depurar
+
+                            try {
+                              var res = await ElectricMeterService()
+                                  .getMeterByNumber(text);
+                              print(
+                                  "Resultado de búsqueda: $res"); // Para verificar el resultado
+
+                              // Verifica si se encontró el medidor
+                              if (res != null) {
+                                // Navega a la nueva pantalla con los detalles del medidor
+                                Get.to(MeterDetailsPage(meter: res));
+                              } else {
+                                Get.snackbar(
+                                  'Error',
+                                  'No se encontró el medidor.',
+                                  snackPosition: SnackPosition.BOTTOM,
+                                );
+                              }
+                            } catch (e) {
+                              print('Error al buscar el medidor: $e');
+                              Get.snackbar('Error',
+                                  'Hubo un problema al buscar el medidor.');
+                            }
+                          },
+                          child: const Text('Buscar medidor'),
+                        ),
                       ],
                     ),
                   ),
@@ -269,7 +293,7 @@ class _CameraScreenState extends State<CameraScreen> {
                     ),
                     onPressed: _scanText,
                     child: Text(
-                      'Scan Number'.toUpperCase(),
+                      'Escanear numero'.toUpperCase(),
                       style: const TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 20,
